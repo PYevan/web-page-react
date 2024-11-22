@@ -1,0 +1,14 @@
+#introduction {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.intro-content h1 {
+  font-size: 2rem;
+  color: #343a40;
+}
+
+.intro-content p {
+  font-size: 1rem;
+  color: #6c757d;
+}

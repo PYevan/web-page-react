@@ -1,0 +1,50 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 300px; /* 设置轮播高度 */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.carousel-control:hover {
+  background: #4caf50;
+}
