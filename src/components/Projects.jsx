@@ -1,30 +1,71 @@
-import React, { Component } from "react";
+import React from "react";
 import "../assets/styles/Projects.css";
 
-export default class Projects extends Component {
-  render() {
-    return (
-      <section id="projects">
-        <h2>My Projects</h2>
-        <div className="project-grid">
-          <div className="project-item">
-            <img src="/images/project1.jpg" alt="Project 1" />
-            <h3>DublinBike App</h3>
-            <p>
-              A web app to visualize bike availability in Dublin using Flask and
-              JavaScript.
-            </p>
+const projects = [
+  {
+    name: "DublinBike Web App",
+    description: "A location-based web app to explore Dublin bike stations.",
+    image: "/images/project1.jpg",
+    github: "https://github.com/PYevan/DublinBike-evan",
+    stack: ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    details: "https://drive.google.com/file/d/1Mk7dxCJF2uP5htWG0pmQUQLaUSSz15lb/view?usp=sharing",
+  },
+  {
+    name: "Street Vendor App",
+    description: "A React & Django app to locate street vendors.",
+    image: "/images/project2.png",
+    github:
+      "https://dev.azure.com/COMP47360/Research%20Practicum/_git/ResearchPracticum",
+    stack: ["React", "Django", "JavaScript", "PostgreSQL"],
+    details: "https://drive.google.com/file/d/1oxuWif785XXxTJyaWZ0r2rCK7bIjhVaq/view?usp=sharing",
+  },
+];
+
+const Projects = () => {
+  return (
+    <section id="projects">
+      <h2 className="section-title">My Projects</h2>
+      <div className="project-grid">
+        {projects.map((project, index) => (
+          <div className="project-item" key={index}>
+            {/* Project Image */}
+            <div className="project-image">
+              <img src={project.image} alt={project.name} />
+            </div>
+
+            {/* Project Content */}
+            <div className="project-content">
+              <h3>
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  {project.name}
+                </a>
+              </h3>
+              <p>{project.description}</p>
+
+              {/* Technology Stack */}
+              <div className="tech-stack">
+                {project.stack.map((tech, i) => (
+                  <span key={i} className={`tech-badge ${tech.toLowerCase()}`}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* View Details Button */}
+              <a
+                href={project.details}
+                className="details-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Details
+              </a>
+            </div>
           </div>
-          <div className="project-item">
-            <img src="/images/project2.png" alt="Project 2" />
-            <h3>Street Vendors App</h3>
-            <p>
-              Helps vendors find locations with the highest foot traffic using
-              React and Django.
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-}
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

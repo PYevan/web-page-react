@@ -1,30 +1,104 @@
+/* Timeline Section */
 .timeline-section {
-  padding: 40px 20px;
-  background-color: #f4f4f9;
+  padding: 60px 20px;
+  background-color: #1f1f1f; /* 深黑色背景 */
+  color: #ffffff; /* 白色字体 */
 }
 
-.timeline-section h2 {
-  font-size: 1.8rem;
-  color: #4caf50;
-  margin-bottom: 20px;
+.timeline-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4caf50; /* 绿色标题 */
+  margin-bottom: 40px;
 }
 
+/* Timeline Container */
 .timeline {
-  border-left: 4px solid #4caf50;
-  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 每个时间线条目间距 */
+  position: relative;
+  margin-left: 50px;
+  border-left: 4px solid #4caf50; /* 左侧绿色时间线 */
 }
 
 .timeline-item {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  padding-left: 20px;
 }
 
-.timeline-item h3 {
+/* Icon Container */
+.timeline-icon {
+  flex-shrink: 0; /* 防止图标变形 */
+  width: 60px;
+  height: 60px;
+  background-color: #292929; /* 图标背景色 */
+  border-radius: 50%; /* 圆形图标 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+  z-index: 1; /* 图标位于卡片上方 */
+}
+
+.timeline-icon img {
+  width: 70%; /* 图标宽度 */
+  height: 70%; /* 图标高度 */
+  object-fit: cover; /* 保持图标比例 */
+}
+
+/* Timeline Content */
+.timeline-content {
+  background: #292929;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-year {
   font-size: 1.2rem;
-  color: #333;
+  color: #4caf50;
   margin-bottom: 10px;
 }
 
-.timeline-item p {
-  font-size: 0.9rem;
-  color: #666;
+.timeline-title {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 10px;
+}
+
+.timeline-content .location {
+  font-style: italic;
+  color: #a8a8a8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline {
+    margin-left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+  }
 }

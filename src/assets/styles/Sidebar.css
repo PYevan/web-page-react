@@ -1,102 +1,155 @@
+/* Sidebar container */
 #sidebar-container {
-  position: relative;
-  display: flex;
-  transition: all 0.3s ease;
-}
-
-#sidebar-container.collapsed #sidebar {
-  transform: translateX(-100%);
-}
-
-#sidebar-container.collapsed .toggle-btn {
-  left: 10px;
-}
-
-.toggle-btn {
-  position: absolute;
-  top: 20px;
-  left: 260px;
-  background: #1f1f1f;
-  color: #ffffff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  z-index: 10;
-  transition: all 0.3s ease;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.toggle-btn:hover {
-  background: #4caf50;
-  color: #ffffff;
-  transform: scale(1.1);
-}
-
-#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 250px;
+  height: 100%;
   background-color: #1a1a1a;
   color: #ffffff;
-  text-align: center;
-  padding: 20px;
+  transition: transform 0.3s ease;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* Sidebar visibility */
+#sidebar-container.hidden {
+  transform: translateX(-100%);
+}
+
+#sidebar-container.visible {
   transform: translateX(0);
-  transition: transform 0.3s ease;
 }
 
-.profile-picture {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  margin: 20px auto;
+/* Profile section */
+.profile {
+  text-align: center;
+  padding: 20px;
 }
 
-h1 {
+.profile h1 {
   font-size: 1.5rem;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
-.email,
-.location {
+.profile .email,
+.profile .location {
   font-size: 0.9rem;
   color: #a8a8a8;
-  margin: 5px 0;
 }
 
-.social-links ul,
-.page-links ul {
+/* Quote section */
+.quote-section {
+  margin: 20px;
+  padding: 10px;
+  background: #252525;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.quote-section h3 {
+  font-size: 1.2rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.quote-section p {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Developer status */
+.status-section {
+  margin: 20px;
+  padding: 10px;
+  background: #252525;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.status-section h3 {
+  font-size: 1.2rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.status-section a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.status-section a:hover {
+  color: #4CAF50;
+}
+
+/* Social links */
+.social-links {
+  margin: 20px;
+  padding: 10px;
+}
+
+.social-links h3 {
+  font-size: 1.2rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.social-links ul {
   list-style: none;
   padding: 0;
-  text-align: left;
 }
 
-.social-links ul li,
-.page-links ul li {
+.social-links ul li {
   margin: 10px 0;
 }
 
-.social-links ul li a,
-.page-links ul li a {
+.social-links ul li a {
   color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.social-links ul li a:hover,
-.page-links ul li a:hover {
-  color: #4caf50;
+.social-links ul li a:hover {
+  color: #4CAF50;
 }
 
-.page-links h3 {
-  margin-top: 20px;
+/* QR Code section */
+.qr-section {
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  background: #252525;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.qr-section h3 {
   font-size: 1.2rem;
-  color: #4caf50;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.qr-section p {
+  font-size: 0.9rem;
+  color: #a8a8a8;
+}
+
+/* Toggle button */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.2rem;
+  display: block;
 }

@@ -29,19 +29,19 @@ export default class About extends Component {
           <div className="skill-card">
             <i className="fab fa-react"></i>
             <h3>Frontend Development</h3>
-            <p>JavaScript (React), HTML, CSS, UI/UX, Typescript</p>
+            <p>JavaScript (React), HTML, CSS, UI/UX</p>
           </div>
           <div className="skill-card">
             <i className="fab fa-aws"></i>
             <h3>Cloud & Infrastructure</h3>
             <p>
-              AWS (EC2, RDS, S3), Azure, Docker, Kubernetes, CI/CD Pipelines
+              AWS (EC2, RDS), Azure, Docker, Kubernetes, CI/CD Pipelines
             </p>
           </div>
           <div className="skill-card">
             <i className="fab fa-github"></i>
             <h3>DevOps & Tools</h3>
-            <p>Git, GitHub, Jira, Agile (Scrum), IDEs, Debuggers</p>
+            <p>Git, GitHub, Agile (Scrum), IDEs</p>
           </div>
         </div>
       </section>
