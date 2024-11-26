@@ -28,7 +28,7 @@ export default class Introduction extends Component {
 
     return (
       <section id="introduction" className="intro-section">
-        {/* 音乐播放控件 */}
+
         <div className="music-control">
           <audio ref={this.audioRef} src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3
 " loop />

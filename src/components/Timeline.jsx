@@ -8,7 +8,7 @@ const timelineData = [
     description:
       "Grew up in Hubei, China. Completed my primary and secondary education, cultivating a strong interest in technology and problem-solving.",
     location: "Hubei, China",
-    icon: "/images/wuhan.png",
+    icon: `${process.env.PUBLIC_URL}/images/wuhan.png`,
   },
   {
     year: "2018-2022",
@@ -16,7 +16,7 @@ const timelineData = [
     description:
       "Earned a Bachelor's degree in Marketing from Jiangsu University. Developed foundational business skills and participated in entrepreneurial projects.",
     location: "Jiangsu, China",
-    icon: "/images/jiangsu.png",
+    icon: `${process.env.PUBLIC_URL}/images/jiangsu.png`,
   },
   {
     year: "2022-2023",
@@ -24,7 +24,7 @@ const timelineData = [
     description:
       "Worked as a front-end intern in Shanghai, developing CI/CD dashboards using Vue and Ant Design Vue.",
     location: "Shanghai, China",
-    icon: "/images/shanghai.png",
+    icon: `${process.env.PUBLIC_URL}/images/shanghai.png`,
   },
   {
     year: "2023-Present",
@@ -32,7 +32,7 @@ const timelineData = [
     description:
       "Pursuing a Master’s in Computer Science at University College Dublin. Specialized in software development, data analytics, and cloud computing.",
     location: "Dublin, Ireland",
-    icon: "/images/dublin.png",
+    icon: `${process.env.PUBLIC_URL}/images/dublin.png`,
   },
 ];
 

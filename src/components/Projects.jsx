@@ -5,7 +5,7 @@ const projects = [
   {
     name: "DublinBike Web App",
     description: "A location-based web app to explore Dublin bike stations.",
-    image: "/images/project1.jpg",
+    image: `${process.env.PUBLIC_URL}/images/project1.jpg`,
     github: "https://github.com/PYevan/DublinBike-evan",
     stack: ["Python", "Flask", "JavaScript", "HTML", "CSS"],
     details: "https://drive.google.com/file/d/1Mk7dxCJF2uP5htWG0pmQUQLaUSSz15lb/view?usp=sharing",
@@ -13,7 +13,7 @@ const projects = [
   {
     name: "Street Vendor App",
     description: "A React & Django app to locate street vendors.",
-    image: "/images/project2.png",
+    image: `${process.env.PUBLIC_URL}/images/project2.png`,
     github:
       "https://dev.azure.com/COMP47360/Research%20Practicum/_git/ResearchPracticum",
     stack: ["React", "Django", "JavaScript", "PostgreSQL"],

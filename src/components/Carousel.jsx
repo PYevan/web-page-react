@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "../assets/styles/Carousel.css";
 
 const images = [
-  "/images/daily1.jpg",
-  "/images/daily2.jpg",
-  "/images/daily3.jpg",
+  `${process.env.PUBLIC_URL}/images/daily1.jpg`,
+  `${process.env.PUBLIC_URL}/images/daily2.jpg`,
+  `${process.env.PUBLIC_URL}/images/daily3.jpg`,
 ];
+
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
