@@ -3,7 +3,7 @@ import "../assets/styles/Timeline.css";
 
 const timelineData = [
   {
-    year: "1998-2018",
+    year: "2000-2018",
     title: "Born and Raised in Hubei",
     description:
       "Grew up in Hubei, China. Completed my primary and secondary education, cultivating a strong interest in technology and problem-solving.",
