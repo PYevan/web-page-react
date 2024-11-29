@@ -1,15 +1,37 @@
 import React, { Component } from "react";
 import "../assets/styles/Introduction.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import { faMagic, faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
 export default class Introduction extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isPlaying: false,
+      isPlaying: false, // Music playing state
+      currentFactIndex: 0, // Fun fact index
     };
-    this.audioRef = React.createRef();
+    this.audioRef = React.createRef(); // Reference for audio element
+    this.magicContainerRef = React.createRef(); // Reference for the confetti container
+    this.funFacts = [
+      "I can make the best latte art!",
+      "I once debugged code for 12 hours straight!",
+      "I bench press bugs... and dumbbells!",
+      "Coffee is my ultimate fuel!",
+    ];
+  }
+
+  componentDidMount() {
+    // Auto-rotate fun facts every 5 seconds
+    this.factInterval = setInterval(() => {
+      this.setState((prevState) => ({
+        currentFactIndex: (prevState.currentFactIndex + 1) % this.funFacts.length,
+      }));
+    }, 5000);
+  }
+
+  componentWillUnmount() {
+    // Clear the interval to prevent memory leaks
+    clearInterval(this.factInterval);
   }
 
   toggleMusic = () => {
@@ -25,8 +47,28 @@ export default class Introduction extends Component {
     this.setState({ isPlaying: !isPlaying });
   };
 
+  triggerMagicEffect = () => {
+    const magicContainer = this.magicContainerRef.current;
+
+    // Create confetti elements
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "%";
+      confetti.style.animationDelay = Math.random() * 1 + "s";
+      confetti.style.backgroundColor =
+        `hsl(${Math.random() * 360}, 100%, 50%)`; // Random color
+      magicContainer.appendChild(confetti);
+
+      // Remove confetti after animation
+      setTimeout(() => {
+        confetti.remove();
+      }, 3000);
+    }
+  };
+
   render() {
-    const { isPlaying } = this.state;
+    const { isPlaying, currentFactIndex } = this.state;
 
     return (
       <section id="introduction" className="intro-section">
@@ -42,11 +84,17 @@ export default class Introduction extends Component {
           </button>
         </div>
 
-        {/* Introduction Content */}
+        {/* Typing Greeting */}
         <div className="content">
-          <h1>
+          <h1 className="typing-greeting">
             Heyyy, <span className="name">Yuhang Lian</span>
+            <span className="cursor">|</span>
           </h1>
+
+          {/* Fun Fact */}
+          <p className="fun-fact">💡 {this.funFacts[currentFactIndex]}</p>
+
+          {/* Description List */}
           <p className="description">
             <span className="desc-item">
               <i className="fas fa-code"></i> Software Developer
@@ -61,8 +109,10 @@ export default class Introduction extends Component {
               <i className="fas fa-compass"></i> Explorer of New Things
             </span>
           </p>
+
+          {/* Resume Button */}
           <a
-            href="/Yuhang_CV.pdf"
+            href="/src/assets/Yuhang_CV.pdf"
             className="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -71,12 +121,14 @@ export default class Introduction extends Component {
           </a>
         </div>
 
-        {/* Background Decoration */}
-        <div className="background-decor">
-          <i className="fas fa-coffee"></i>
-          <i className="fas fa-dumbbell"></i>
-          <i className="fas fa-code"></i>
-          <i className="fas fa-laptop-code"></i>
+        {/* Magic Effect Container */}
+        <div ref={this.magicContainerRef} className="magic-container"></div>
+
+        {/* Magic Button */}
+        <div className="magic-button">
+          <button onClick={this.triggerMagicEffect} className="magic-btn">
+            <FontAwesomeIcon icon={faMagic} />
+          </button>
         </div>
       </section>
     );

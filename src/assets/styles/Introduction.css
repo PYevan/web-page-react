@@ -1,80 +1,114 @@
-/* Introduction Section */
+/* General Introduction Styles */
 #introduction {
   position: relative;
   padding: 100px 20px;
   text-align: center;
-  background: linear-gradient(120deg, #121212, #1f1f1f); /* Subtle gradient */
+  background: linear-gradient(120deg, #121212, #1f1f1f);
   color: #ffffff;
-  overflow: hidden; /* Hide overflow */
+  overflow: hidden;
 }
 
-/* Music Control Button */
+/* Music Control */
 .music-control {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 1000;
 }
 
 .music-btn {
-  background-color: transparent; /* Transparent button for sleek design */
-  color: #4caf50; /* Green icon */
-  border: none;
+  background: transparent;
+  color: #4caf50;
   font-size: 1.5rem;
+  border: none;
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease; /* Add animation */
+  transition: transform 0.3s, color 0.3s;
 }
 
 .music-btn:hover {
-  transform: scale(1.2); /* Slight zoom effect */
-  color: #81c784; /* Lighter green */
+  transform: scale(1.2);
+  color: #81c784;
 }
 
-/* Main Content */
-.content {
-  position: relative;
-  z-index: 1;
-}
-
-.content h1 {
+/* Typing Greeting */
+.typing-greeting {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 20px;
-  animation: fadeIn 2s ease; /* Fade-in effect */
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(30) infinite alternate;
 }
 
-.content h1 .name {
-  background: linear-gradient(45deg, #4caf50, #81c784);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.cursor {
+  display: inline-block;
+  width: 5px;
+  background: #4caf50;
+  animation: blink 0.6s infinite;
 }
 
-/* Description List */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    background: transparent;
+  }
+  50% {
+    background: #4caf50;
+  }
+}
+
+/* Fun Fact */
+.fun-fact {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #cccccc;
+  font-style: italic;
+}
+
+/* Description Section */
 .description {
   display: flex;
-  flex-wrap: wrap; /* Wrap items in smaller screens */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
   font-size: 1.2rem;
-  margin: 20px 0;
+  margin: 30px 0;
   color: #cccccc;
 }
 
 .desc-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
+  gap: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .desc-item i {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #4caf50;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.desc-item:hover {
+  transform: translateY(-5px);
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
 .desc-item:hover i {
-  transform: rotate(20deg) scale(1.2); /* Rotate and scale on hover */
   color: #81c784;
 }
 
@@ -95,49 +129,64 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Background Decorative Icons */
-.background-decor {
-  position: absolute;
+/* Magic Button */
+.magic-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.magic-btn {
+  background: #4caf50;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.magic-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Magic Effect Container */
+.magic-container {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
 }
 
-.background-decor i {
+.confetti {
   position: absolute;
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.1);
-  animation: float 6s infinite alternate ease-in-out;
+  width: 10px;
+  height: 10px;
+  animation: confetti-fall 3s ease-in-out, confetti-spin 3s linear;
 }
 
-.background-decor .fa-coffee {
-  top: 10%;
-  left: 20%;
-}
-
-.background-decor .fa-dumbbell {
-  top: 50%;
-  left: 10%;
-}
-
-.background-decor .fa-code {
-  bottom: 15%;
-  right: 20%;
-}
-
-.background-decor .fa-laptop-code {
-  top: 30%;
-  right: 10%;
-}
-
-/* Floating Animation */
-@keyframes float {
-  from {
-    transform: translateY(0);
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh);
   }
-  to {
-    transform: translateY(20px);
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes confetti-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
