@@ -109,16 +109,6 @@ export default class Introduction extends Component {
               <i className="fas fa-compass"></i> Explorer of New Things
             </span>
           </p>
-
-          {/* Resume Button */}
-          <a
-            href="/src/assets/Yuhang_CV.pdf"
-            className="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Resume
-          </a>
         </div>
 
         {/* Magic Effect Container */}
