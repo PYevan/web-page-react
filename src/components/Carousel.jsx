@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from "react";
 import "../assets/styles/Carousel.css";
 
+// Ensure the images are placed correctly in the `public/images` folder
 const images = [
   `${process.env.PUBLIC_URL}/images/daily1.jpg`,
   `${process.env.PUBLIC_URL}/images/daily2.jpg`,
   `${process.env.PUBLIC_URL}/images/daily3.jpg`,
 ];
 
-
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 自动轮播效果
+  // Automatically switch images every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // 每3秒切换一次
-    return () => clearInterval(interval); // 清理定时器
+    }, 3000);
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
-  // 手动切换
+  // Handlers for manual control
   const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
   const handleNext = () => {

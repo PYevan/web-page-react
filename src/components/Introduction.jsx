@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../assets/styles/Introduction.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
 export default class Introduction extends Component {
   constructor(props) {
@@ -28,15 +30,19 @@ export default class Introduction extends Component {
 
     return (
       <section id="introduction" className="intro-section">
-
+        {/* Music Control */}
         <div className="music-control">
-          <audio ref={this.audioRef} src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3
-" loop />
+          <audio
+            ref={this.audioRef}
+            src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3"
+            loop
+          />
           <button onClick={this.toggleMusic} className="music-btn">
-            {isPlaying ? "Pause Music" : "Play Music"}
+            <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
           </button>
         </div>
 
+        {/* Introduction Content */}
         <div className="content">
           <h1>
             Heyyy, <span className="name">Yuhang Lian</span>
@@ -64,6 +70,8 @@ export default class Introduction extends Component {
             View Resume
           </a>
         </div>
+
+        {/* Background Decoration */}
         <div className="background-decor">
           <i className="fas fa-coffee"></i>
           <i className="fas fa-dumbbell"></i>

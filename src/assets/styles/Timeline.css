@@ -1,90 +1,161 @@
 /* Timeline Section */
 .timeline-section {
   padding: 60px 20px;
-  background-color: #1f1f1f; /* 深黑色背景 */
-  color: #ffffff; /* 白色字体 */
+  background-color: #1f1f1f; /* Dark background */
+  color: #ffffff; /* White text for readability */
 }
 
 .timeline-title {
   text-align: center;
   font-size: 2.5rem;
-  color: #4caf50; /* 绿色标题 */
+  color: #4caf50; /* Green for emphasis */
   margin-bottom: 40px;
+  animation: fadeIn 2s ease-in-out; /* Smooth fade-in for the title */
 }
 
 /* Timeline Container */
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* 每个时间线条目间距 */
+  gap: 50px; /* Spacing between timeline items */
   position: relative;
   margin-left: 50px;
-  border-left: 4px solid #4caf50; /* 左侧绿色时间线 */
+  border-left: 4px solid #4caf50; /* Green vertical line */
+  overflow: hidden; /* Prevent overflow during animations */
 }
 
+/* Timeline Item */
 .timeline-item {
   display: flex;
   align-items: flex-start;
   gap: 20px;
   position: relative;
   padding-left: 20px;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-100px); /* Slide in from the left */
+  animation: slideIn 1.8s ease forwards; /* Increased duration for smoother effect */
+  animation-delay: 0.4s; /* Staggered delay */
+}
+
+/* Alternate delays for odd/even items */
+.timeline-item:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+.timeline-item:nth-child(even) {
+  animation-delay: 0.8s;
 }
 
 /* Icon Container */
 .timeline-icon {
-  flex-shrink: 0; /* 防止图标变形 */
-  width: 60px;
-  height: 60px;
-  background-color: #292929; /* 图标背景色 */
-  border-radius: 50%; /* 圆形图标 */
+  flex-shrink: 0; /* Prevent stretching */
+  width: 70px;
+  height: 70px;
+  background-color: #292929; /* Initial dark gray */
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 阴影效果 */
-  z-index: 1; /* 图标位于卡片上方 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transform: scale(0); /* Start small */
+  animation: popIn 1.2s ease forwards; /* Icon pop-in animation */
+  animation-delay: 0.6s;
 }
 
 .timeline-icon img {
-  width: 70%; /* 图标宽度 */
-  height: 70%; /* 图标高度 */
-  object-fit: cover; /* 保持图标比例 */
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
 }
 
 /* Timeline Content */
 .timeline-content {
-  background: #292929;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #292929; /* Initial dark gray background */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.8s ease, transform 0.4s ease,
+    box-shadow 0.4s ease; /* Add smooth background-color transition */
 }
 
 .timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px); /* Slight hover elevation */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
 }
 
+/* Timeline Year and Title */
 .timeline-year {
-  font-size: 1.2rem;
-  color: #4caf50;
-  margin-bottom: 10px;
+  font-size: 1.4rem; /* Increased font size */
+  color: #4caf50; /* Green color */
+  margin-bottom: 15px;
 }
 
 .timeline-title {
-  font-size: 1.5rem;
+  font-size: 1.7rem; /* Slightly larger title */
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  transition: color 0.8s ease; /* Smooth transition for text color */
 }
 
+/* Timeline Description */
 .timeline-content p {
   font-size: 1rem;
-  color: #cccccc;
+  color: #cccccc; /* Initial gray text color */
   margin-bottom: 10px;
+  transition: color 0.8s ease; /* Smooth text color transition */
 }
 
 .timeline-content .location {
   font-style: italic;
   color: #a8a8a8;
+  transition: color 0.8s ease; /* Smooth location text transition */
+}
+
+/* Animations */
+
+/* Fade-in for title */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation with color change */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* Start off-screen */
+    background-color: #292929; /* Initial dark gray */
+    color: #555555; /* Initial muted text color */
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50px); /* Midway movement */
+    background-color: #3a3a3a; /* Slightly lighter gray */
+    color: #7a7a7a; /* Midway text color */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Settle into position */
+    background-color: #4caf50; /* Final green background */
+    color: #ffffff; /* Final white text color */
+  }
+}
+
+/* Icon pop-in animation */
+@keyframes popIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Responsive Design */
@@ -98,7 +169,7 @@
   }
 
   .timeline-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 }

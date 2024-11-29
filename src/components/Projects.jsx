@@ -7,7 +7,7 @@ const projects = [
     description: "A location-based web app to explore Dublin bike stations.",
     image: `${process.env.PUBLIC_URL}/images/project1.jpg`,
     github: "https://github.com/PYevan/DublinBike-evan",
-    stack: ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    stack: ["Python", "Flask", "JavaScript", "HTML", "CSS", "ML"],
     details: "https://drive.google.com/file/d/1Mk7dxCJF2uP5htWG0pmQUQLaUSSz15lb/view?usp=sharing",
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     image: `${process.env.PUBLIC_URL}/images/project2.png`,
     github:
       "https://dev.azure.com/COMP47360/Research%20Practicum/_git/ResearchPracticum",
-    stack: ["React", "Django", "JavaScript", "PostgreSQL"],
+    stack: ["React", "Django", "GIS", "PostgreSQL", "Azure Dev", "AWS"],
     details: "https://drive.google.com/file/d/1oxuWif785XXxTJyaWZ0r2rCK7bIjhVaq/view?usp=sharing",
   },
 ];

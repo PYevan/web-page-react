@@ -2,7 +2,7 @@
   "name": "myweb",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PYevan.github.io/web-page-react",
+  "homepage": "https://yuhang.me",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-brands-svg-icons": "^6.7.1",
@@ -15,6 +15,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.12.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

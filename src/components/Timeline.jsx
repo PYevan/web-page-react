@@ -20,9 +20,9 @@ const timelineData = [
   },
   {
     year: "2022-2023",
-    title: "Front-End Intern at NIO",
+    title: "Consulting Project Assistant  at Pamirs",
     description:
-      "Worked as a front-end intern in Shanghai, developing CI/CD dashboards using Vue and Ant Design Vue.",
+      "·\tAssisted in connecting clients with industry experts, facilitating valuable industry knowledge exchanges to inform strategic business decisions",
     location: "Shanghai, China",
     icon: `${process.env.PUBLIC_URL}/images/shanghai.png`,
   },
@@ -42,10 +42,13 @@ const Timeline = () => {
       <h2 className="timeline-title">Timeline</h2>
       <div className="timeline">
         {timelineData.map((item, index) => (
-          <div key={index} className="timeline-item">
+          <div key={index} className={`timeline-item`}>
+            {/* Timeline icon with animation */}
             <div className="timeline-icon">
               <img src={item.icon} alt={`${item.title} icon`} />
             </div>
+
+            {/* Timeline content */}
             <div className="timeline-content">
               <h3 className="timeline-year">{item.year}</h3>
               <h4 className="timeline-title">{item.title}</h4>

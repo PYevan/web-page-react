@@ -50,16 +50,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.quote-section h3 {
-  font-size: 1.2rem;
-  color: #4CAF50;
-  margin-bottom: 10px;
-}
 
-.quote-section p {
-  font-size: 0.9rem;
-  color: #ffffff;
-}
 
 /* Developer status */
 .status-section {

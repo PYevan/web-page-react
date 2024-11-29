@@ -15,27 +15,12 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = () => {
+const Sidebar = ({ onToggle }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [quote, setQuote] = useState("");
-
-  useEffect(() => {
-    // Fetch random quote from API
-    const fetchQuote = async () => {
-      try {
-        const response = await fetch("https://api.quotable.io/random");
-        const data = await response.json();
-        setQuote(data.content);
-      } catch {
-        setQuote("Be yourself; everyone else is already taken.");
-      }
-    };
-
-    fetchQuote();
-  }, []);
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
+    onToggle(!isCollapsed);
   };
 
   return (

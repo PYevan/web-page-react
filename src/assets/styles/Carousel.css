@@ -2,27 +2,35 @@
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 200px; /* Adjust carousel size for sidebar */
+  max-width: 300px; /* Adjusted width for better visibility */
   margin: 0 auto; /* Center the carousel */
   overflow: hidden;
   border-radius: 10px; /* Rounded edges */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: #121212; /* Dark background for visibility */
 }
 
 /* Carousel images */
 .carousel-images {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  position: relative; /* Make images overlap */
+  width: 100%;
+  height: 200px; /* Fixed height for consistent layout */
 }
 
 .carousel-images img {
+  position: absolute; /* Stack images on top of each other */
+  top: 0;
+  left: 0;
   width: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the space proportionally */
+  opacity: 0; /* Start with all images hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in/out transition */
 }
 
 .carousel-images img.active {
   opacity: 1; /* Show the active image */
+  z-index: 1; /* Ensure active image is on top */
 }
 
 /* Carousel controls */
@@ -36,7 +44,7 @@
   padding: 10px;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 10;
 }
 
 .carousel-control.prev {

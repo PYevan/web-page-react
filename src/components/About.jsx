@@ -18,13 +18,13 @@ export default class About extends Component {
         <p className="intro">
           I transitioned from marketing to computer science, driven by a passion
           for innovation and technology. My skills include full-stack
-          development, cloud computing, and data analytics.
+          development, cloud computing, for language: Python, Java, Ruby...
         </p>
         <div className="skills-grid">
           <div className="skill-card">
             <i className="fab fa-python"></i>
             <h3>Backend Development</h3>
-            <p>Python, Java, SQL, PostgreSQL, MySQL</p>
+            <p>Python, Java, PostgreSQL, MySQL</p>
           </div>
           <div className="skill-card">
             <i className="fab fa-react"></i>
@@ -35,7 +35,7 @@ export default class About extends Component {
             <i className="fab fa-aws"></i>
             <h3>Cloud & Infrastructure</h3>
             <p>
-              AWS (EC2, RDS), Azure, Docker, Kubernetes, CI/CD Pipelines
+              AWS (EC2, RDS), Azure, Docker, Kubernetes
             </p>
           </div>
           <div className="skill-card">

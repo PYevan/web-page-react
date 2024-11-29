@@ -1,109 +1,117 @@
-/* Container for the entire introduction section */
+/* Introduction Section */
 #introduction {
   position: relative;
   padding: 100px 20px;
   text-align: center;
-  background-color: #121212; /* Dark background color */
-  color: #ffffff; /* White text color */
-  overflow: hidden; /* Hide overflowing background elements */
+  background: linear-gradient(120deg, #121212, #1f1f1f); /* Subtle gradient */
+  color: #ffffff;
+  overflow: hidden; /* Hide overflow */
 }
 
-/* Content container for text and button */
+/* Music Control Button */
+.music-control {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.music-btn {
+  background-color: transparent; /* Transparent button for sleek design */
+  color: #4caf50; /* Green icon */
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease; /* Add animation */
+}
+
+.music-btn:hover {
+  transform: scale(1.2); /* Slight zoom effect */
+  color: #81c784; /* Lighter green */
+}
+
+/* Main Content */
 .content {
-  z-index: 1; /* Ensure content is above the background decor */
   position: relative;
+  z-index: 1;
 }
 
-/* Main heading (Name and Greeting) */
 .content h1 {
-  font-size: 3rem; /* Large font size for the heading */
-  font-weight: bold; /* Make the text bold */
-  margin-bottom: 20px; /* Add space below the heading */
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease; /* Fade-in effect */
 }
 
-/* Highlight the name with a gradient effect */
 .content h1 .name {
-  background: linear-gradient(45deg, #4CAF50, #81C784); /* Green gradient */
-  -webkit-background-clip: text; /* Clip the gradient to the text */
-  -webkit-text-fill-color: transparent; /* Make the background fill the text */
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Subtitle or description text */
+/* Description List */
 .description {
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Arrange items vertically */
-  align-items: center; /* Center items horizontally */
-  gap: 15px; /* Add space between items */
-  font-size: 1.2rem; /* Increase font size slightly */
-  margin: 20px 0; /* Add vertical spacing */
-  color: #cccccc; /* Light gray text color */
+  display: flex;
+  flex-wrap: wrap; /* Wrap items in smaller screens */
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #cccccc;
 }
 
-/* Each description item (text + icon) */
 .desc-item {
-  display: flex; /* Flexbox for aligning text and icons */
-  align-items: center; /* Center vertically */
-  gap: 10px; /* Add space between the icon and text */
-  transition: all 0.3s ease; /* Smooth hover animations */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
 }
 
-/* Icon styles inside description items */
 .desc-item i {
-  font-size: 1.5rem; /* Slightly larger icons */
-  color: #4CAF50; /* Default green color for icons */
-  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transformations */
-}
-
-/* Hover effect for description items */
-.desc-item:hover {
-  color: #ffffff; /* Text turns white on hover */
+  font-size: 1.5rem;
+  color: #4caf50;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .desc-item:hover i {
-  color: #81C784; /* Lighter green for icons on hover */
-  transform: scale(1.2); /* Slightly enlarge the icon */
+  transform: rotate(20deg) scale(1.2); /* Rotate and scale on hover */
+  color: #81c784;
 }
 
-/* Button styling */
+/* Resume Button */
 .btn-primary {
-  display: inline-block; /* Inline block to allow padding */
-  padding: 10px 20px; /* Add padding inside the button */
-  background: linear-gradient(45deg, #4CAF50, #81C784); /* Green gradient */
-  color: #ffffff; /* White text */
-  text-decoration: none; /* Remove underline */
-  border-radius: 25px; /* Rounded corners */
-  font-size: 1rem; /* Standard button font size */
-  transition: all 0.3s ease; /* Smooth hover effects */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  color: #ffffff;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Button hover effect */
 .btn-primary:hover {
-  background: linear-gradient(45deg, #66BB6A, #A5D6A7); /* Lighter gradient */
-  transform: scale(1.1); /* Slightly enlarge the button */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Background decorative icons */
+/* Background Decorative Icons */
 .background-decor {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Ensure the decor is behind the content */
-  overflow: hidden; /* Prevent decor from overflowing */
+  z-index: 0;
 }
 
-/* Decorative icons inside the background */
 .background-decor i {
-  position: absolute; /* Position icons individually */
-  font-size: 4rem; /* Large icon size */
-  color: rgba(255, 255, 255, 0.1); /* Faint white color */
-  animation: float 6s infinite alternate ease-in-out; /* Floating animation */
+  position: absolute;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.1);
+  animation: float 6s infinite alternate ease-in-out;
 }
 
-/* Specific positioning for each decorative icon */
 .background-decor .fa-coffee {
   top: 10%;
   left: 20%;
@@ -124,34 +132,12 @@
   right: 10%;
 }
 
-/* Floating animation for decorative icons */
+/* Floating Animation */
 @keyframes float {
   from {
-    transform: translateY(0); /* Start at the original position */
+    transform: translateY(0);
   }
   to {
-    transform: translateY(20px); /* Move down slightly */
+    transform: translateY(20px);
   }
-}
-
-.music-control {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.music-btn {
-  background-color: #4caf50;
-  color: #ffffff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.music-btn:hover {
-  background-color: #81c784;
 }
